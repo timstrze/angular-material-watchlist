@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {Http, RequestOptions, Headers} from '@angular/http';
+import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -11,7 +11,7 @@ export class WatchListService {
   // https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in (":list")
   // https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in (":searchVal")
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getQuoteData(): Promise<any[]> {
     // const headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
@@ -21,7 +21,7 @@ export class WatchListService {
       .toPromise()
       .then((response) => {
         if (response) {
-          return response.json();
+          return response;
         }
       })
       .catch(this.handleError);

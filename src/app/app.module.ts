@@ -6,7 +6,7 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { WatchListComponent } from './watch-lists/watch-list.component';
 import {WatchListService} from './watch-lists/watch-list/watch-list.service'
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './user/user.service';
 import {AccountService} from './account/account.service';
 import {PreferenceService} from './preferences/preference/preference.service';
@@ -21,7 +21,7 @@ import { PreferencesComponent } from './preferences/preferences.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
+    HttpClientModule,
     MaterialModule
   ],
   providers: [AccountService, PreferenceService, WatchListService, UserService],
