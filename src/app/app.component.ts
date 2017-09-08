@@ -9,12 +9,13 @@ import {IUser} from './user/user.interface';
 })
 export class AppComponent implements OnInit {
 
-  // user: IUser;
+  User: IUser;
   constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.userService.getUser().then((results) => {
       console.log(results);
+      this.User = results;
     });
   }
 
