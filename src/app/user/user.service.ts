@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
+import {IUser} from './user.interface';
 
 @Injectable()
 export class UserService {
@@ -10,7 +11,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(): Promise<any[]> {
+  getUser(): Promise<IUser> {
 
     return this.http.get(`${this.siteUrl}`)
       .toPromise()

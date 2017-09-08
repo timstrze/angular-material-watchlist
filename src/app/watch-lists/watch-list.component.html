@@ -1,7 +1,7 @@
-<md-list dense>
-  <h3 md-subheader>Symbols</h3>
-  <md-list-item *ngFor="let folder of folders">
-    <h4 md-line>{{folder.name}}</h4>
-    <p md-line> {{folder.updated | date}} </p>
+<md-list dense *ngIf="watchList">
+  <h3 md-subheader>Symbols for {{watchList.title}}</h3>
+  <md-list-item *ngFor="let symbol of watchList.Symbols">
+    <h4 md-line>{{symbol.symbol}}</h4>
+    <!--<p md-line> {{symbol.updated | date}} </p>-->
   </md-list-item>
 </md-list>
