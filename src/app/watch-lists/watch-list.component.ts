@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {WatchListService} from './watch-list/watch-list.service';
 
 @Component({
@@ -7,6 +7,8 @@ import {WatchListService} from './watch-list/watch-list.service';
   styleUrls: ['./watch-list.component.css']
 })
 export class WatchListComponent implements OnInit {
+
+  @Input() watchList: any;
 
   folders = [
     {
