@@ -28,6 +28,7 @@
     "@types/jasmine": "^2.5.54",
     "@types/jasminewd2": "^2.0.3",
     "@types/node": "^6.0.88",
+    "codacy-coverage": "^2.0.3",
     "core-js": "^2.5.1",
     "hammerjs": "^2.0.8",
     "karma": "^1.7.1",
