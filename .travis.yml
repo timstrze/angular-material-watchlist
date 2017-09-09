@@ -9,6 +9,7 @@ node_js:
 #branches:
 #  only:
 #    - master
+
 apt:
   sources:
     - google-chrome
@@ -34,8 +35,14 @@ script:
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
+=======
 
-notifications:
-  email:
-    on_failure: change
-    on_success: change
+before_script:
+#  - npm install -g firebase-tools
+  - npm install -g @angular/cli
+
+script:
+  - ng build --prod
+
+after_success:
+#  - firebase deploy --token $FIREBASE_TOKEN
