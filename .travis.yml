@@ -29,7 +29,7 @@ before_script:
   - ng build
 
 script:
-  - karma start config/karma.conf.js --single-run
+  - ng test --code-coverage --single-run
   - ng build --prod
 
 after_success:
