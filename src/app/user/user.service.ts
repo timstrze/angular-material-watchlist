@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
@@ -9,22 +9,25 @@ export class UserService {
 
   siteUrl: String = 'json/user.json';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getUser(): Promise<IUser> {
 
     return this.http.get(`${this.siteUrl}`)
       .toPromise()
-      .then((response) => {
-        if (response) {
-          return response;
-        }
-      })
+      .then(this.handleResponse)
       .catch(this.handleError);
   }
 
-  handleError(error) {
-    console.log(error);
+  handleResponse(response) {
+    if (response) {
+      return response;
+    }
+  }
+
+  handleError(error: any): Promise<any> {
+    return Promise.reject(error.message || error);
   }
 
 }
