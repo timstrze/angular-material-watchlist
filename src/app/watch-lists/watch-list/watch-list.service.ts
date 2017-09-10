@@ -19,16 +19,18 @@ export class WatchListService {
 
     return this.http.get(`${this.siteUrl}`)
       .toPromise()
-      .then((response) => {
-        if (response) {
-          return response;
-        }
-      })
+      .then(this.handleResponse)
       .catch(this.handleError);
   }
 
-  handleError(error) {
-    console.log(error);
+  handleResponse(response) {
+    if (response) {
+      return response;
+    }
+  }
+
+  handleError(error: any): Promise<any> {
+    return Promise.reject(error.message || error);
   }
 
 }
