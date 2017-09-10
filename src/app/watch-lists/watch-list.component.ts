@@ -13,9 +13,9 @@ export class WatchListComponent implements OnInit {
   constructor(private watchListService: WatchListService) { }
 
   ngOnInit() {
-    // this.watchListService.getQuoteData().then((results) => {
-    //   // console.log(results);
-    // });
+    this.watchListService.getQuoteData().then((results) => {
+      // console.log(results);
+    });
   }
 
 }
