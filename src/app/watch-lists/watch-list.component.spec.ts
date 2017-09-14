@@ -16,18 +16,7 @@ describe('WatchListComponent', () => {
       providers: [{
         provide: WatchListService,
         useValue: {
-          getQuoteData: getSpy.and.returnValue({
-            toPromise: function () {
-              return {
-                then: function () {
-                  return {
-                    catch: function () {
-                    }
-                  };
-                }
-              };
-            }
-          })
+          getQuoteData: getSpy.and.returnValue(Promise.resolve({}))
         }
       }],
       imports: [MaterialModule]
