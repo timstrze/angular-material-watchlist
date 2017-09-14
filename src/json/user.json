@@ -1,7 +1,6 @@
 {
   "users": [
     {
-      "id": "0000001",
       "accountNickname": "Strzelecki Family Account",
       "userName": "timstrze",
       "firstName": "Timothy",
@@ -593,7 +592,6 @@
       }
     },
     {
-      "id": "0000002",
       "accountNickname": "Brandy Personal Account",
       "userName": "brandystrze",
       "firstName": "Brandy",
