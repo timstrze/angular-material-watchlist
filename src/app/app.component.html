@@ -1,14 +1,21 @@
 <md-toolbar color="primary">
   <span>Custom Watch List</span>
+
+
+
+  <div> {{ (user | async)?.uid }} </div>
+  <button (click)="login()">Login</button>
+  <button (click)="logout()">Logout</button>
+
 </md-toolbar>
 
 <md-sidenav-container class="example-sidenav-fab-container">
   <md-sidenav #sidenav mode="side" opened="true">
-    <ul>
-      <li class="text" *ngFor="let user of users | async">
-        {{user.firstName}}
-      </li>
-    </ul>
+    <!--<ul>-->
+      <!--<li class="text" *ngFor="let user of users | async">-->
+        <!--{{user.firstName}}-->
+      <!--</li>-->
+    <!--</ul>-->
     <!--<app-watch-list *ngIf="User && User.Accounts" [watchList]="User.Accounts[0].WatchLists[0]"></app-watch-list>-->
   </md-sidenav>
   <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
